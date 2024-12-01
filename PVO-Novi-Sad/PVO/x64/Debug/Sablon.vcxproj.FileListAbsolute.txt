@@ -1,0 +1,2 @@
+C:\Users\lukap\Desktop\openGL-2Dproject\PVO-Novi-Sad\x64\Debug\glew32.dll
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\x64\Debug\glew32.dll

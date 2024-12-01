@@ -1,0 +1,46 @@
+﻿  main.cpp
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(69,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(73,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(75,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(75,44): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(341,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(364,57): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(364,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(364,35): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(383,64): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(383,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(383,42): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(399,44): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(399,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(399,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(680,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(682,167): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(754,34): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(755,33): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(827,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(927,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(928,52): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+freetype28d.lib(ftinit.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(ftinit.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(ftbase.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(ftbase.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(autofit.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(autofit.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(truetype.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(truetype.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(type1.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(type1.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(cff.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(cff.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(type1cid.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(type1cid.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(pfr.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(pfr.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(type42.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(type42.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(winfnt.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(winfnt.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(pcf.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(pcf.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(psaux.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(psaux.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(psmodule.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(psmodule.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(pshinter.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(pshinter.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(raster.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(raster.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(sfnt.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(sfnt.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(smooth.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(smooth.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(bdf.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(bdf.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(ftsystem.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(ftsystem.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(ftdebug.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(ftdebug.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(ftbitmap.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(ftbitmap.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(ftgzip.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(ftgzip.obj)' or at ''; linking object as if no debug info
+freetype28d.lib(ftlzw.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(ftlzw.obj)' or at ''; linking object as if no debug info
+  Sablon.vcxproj -> C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\x64\Debug\PVO.exe
