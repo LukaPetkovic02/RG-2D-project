@@ -46,10 +46,10 @@ struct Location {
 };
 
 struct Rocket {
-    float x, y;           // Pozicija rakete
-    float dirX, dirY;     // Smer rakete
-    bool isFlying;        // Da li je raketa u letu
-    int targetHelicopter; // Indeks helikoptera koji raketa gađa
+    float x, y;
+    float dirX, dirY;
+    bool isFlying;
+    int targetHelicopter;
 };
 
 
@@ -64,8 +64,10 @@ int helicoptersLeft = 5;
 auto startTime = std::chrono::high_resolution_clock::now();
 bool initWait = false;
 
-float baseCenterX = 0.0f, baseCenterY = 0.0f; // Koordinate centra baze
-bool baseCenterSet = false; // Da li je centar postavljen
+std::string helicopterStrings[5] = { "A","S","D","F","G" };
+
+float baseCenterX = 0.0f, baseCenterY = 0.0f;
+bool baseCenterSet = false;
 float baseCenterRadius = 0.07;
 
 bool cityCenterSet = false;
@@ -79,11 +81,11 @@ int selectedHel = -1;
 bool gameOver = false;
 int countTo3 = 0;
 void selectHelicopter(int helIndex) {
-    if (helicopterPositions[helIndex].x < 100.0f) { // Proveravamo da li je helikopter na sceni
+    if (helicopterPositions[helIndex].x < 100.0f) { // Proverava da li je helikopter na sceni
         selectedHel = helIndex;
     }
 }
-// Funkcija za normalizaciju vektora
+
 void normalizeVector(float& x, float& y) {
     float length = sqrt(x * x + y * y);
     if (length != 0) {
@@ -113,7 +115,7 @@ void LoadFont(const char* fontPath) {
         return;
     }
 
-    FT_Set_Pixel_Sizes(face, 0, 48); // Postavi visinu na 48 piksela
+    FT_Set_Pixel_Sizes(face, 0, 48);
 
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // Deaktiviraj automatsko poravnanje
 
@@ -165,7 +167,7 @@ void RenderText(unsigned int shader, std::string text, float x, float y, float s
     for (char c : text) {
         if (c == ' ') {
             // Ako je karakter razmak, samo pomeri x poziciju
-            x += (Characters['A'].Advance >> 6) * scale; // Koristi vrednost iz bilo kog karaktera (npr. 'A') za razmak
+            x += (Characters['A'].Advance >> 6) * scale;
             continue;
         }
 
@@ -196,14 +198,12 @@ void RenderText(unsigned int shader, std::string text, float x, float y, float s
 
         glDrawArrays(GL_TRIANGLES, 0, 6);
 
-        x += (ch.Advance >> 6) * scale; // Pomeri x za sledeći karakter
+        x += (ch.Advance >> 6) * scale;
     }
 
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
 }
-
-
 
 void InitTextRendering() {
     glGenVertexArrays(1, &VAOText);
@@ -259,7 +259,6 @@ int main(void)
     glfwMakeContextCurrent(window);
 
     // OpenGL state
-    // ------------
     glEnable(GL_CULL_FACE);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -283,7 +282,6 @@ int main(void)
     
     LoadFont("fonts/ariali.ttf");
     InitTextRendering();
-    //RenderText(textShader, "Nesto", 0.0, 0.0, 1.0, glm::vec3(1.0f, 0.0f, 0.0f));
 
     float vertices[] = {
     -1.0, -1.0,  0.0, 0.0,
@@ -293,8 +291,6 @@ int main(void)
      1.0, -1.0,  1.0, 0.0,
      1.0,  1.0,  1.0, 1.0
     };
-
-    
 
     unsigned int stride = (2 + 2) * sizeof(float);
 
@@ -330,7 +326,6 @@ int main(void)
     unsigned uTexLoc = glGetUniformLocation(unifiedShader, "uTex");
     glUniform1i(uTexLoc, 0);
     // Opis baze -----------------------------------------------------------------------
-    //float baseCircle[CRES * 2 + 4];
 
     // Opis centra Novog Sada ----------------------------------------------------------
     float cityCenterCircle[CRES * 2 + 4];
@@ -351,7 +346,6 @@ int main(void)
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
-
 
     int dronesLeft = DRONES_LEFT;
 
@@ -410,7 +404,6 @@ int main(void)
 
 
     int applyTranslationLoc = glGetUniformLocation(baseShader, "applyTranslation");
-
 
     // Opis baze -----------------------------------------------------------------------
     float baseCircle[CRES * 2 + 4];
@@ -534,7 +527,7 @@ int main(void)
 
         glUseProgram(greenShader);
         int colorLoc = glGetUniformLocation(greenShader, "overlayColor");
-        glUniform4f(colorLoc, 0.0f,1.0f,0.0f,0.25f); // (R, G, B, A)
+        glUniform4f(colorLoc, 0.0f,1.0f,0.0f,0.25f);
 
         glBindVertexArray(VAOgreen);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
@@ -546,7 +539,7 @@ int main(void)
 
         // Crtanje preostalih dronova
         for (int i = 0; i < dronesLeft; ++i) {
-            glUniform1i(applyTranslationLoc, false); // Isključivanje translacije
+            glUniform1i(applyTranslationLoc, false);
             glBindVertexArray(VAOdronLeft[i]);
             colorLoc = glGetUniformLocation(baseShader, "color");
             glUniform3f(colorLoc, 0.0, 0.0, 1.0);
@@ -555,7 +548,7 @@ int main(void)
 
         // Crtanje indikatora preostalih helikoptera (crveno)
         for (int i = 0; i < helicoptersLeft; ++i) {
-            glUniform1i(applyTranslationLoc, false); // Isključivanje translacije
+            glUniform1i(applyTranslationLoc, false);
             glBindVertexArray(VAOhelicoptersLeft[i]);
             colorLoc = glGetUniformLocation(baseShader, "color");
             glUniform3f(colorLoc, 1.0, 0.0, 0.0);
@@ -563,7 +556,7 @@ int main(void)
         }
         // Crtanje indikatora pogodjenih helikoptera (zeleno)
         for (int i = helicoptersLeft; i < 5; ++i) {
-            glUniform1i(applyTranslationLoc, false); // Isključivanje translacije
+            glUniform1i(applyTranslationLoc, false);
             glBindVertexArray(VAOhelicoptersLeft[i]);
             colorLoc = glGetUniformLocation(baseShader, "color");
             glUniform3f(colorLoc, 0.0, 1.0, 0.0);
@@ -571,7 +564,7 @@ int main(void)
         }
 
         // Crtanje statusa grada
-        glUniform1i(applyTranslationLoc, false); // Isključivanje translacije
+        glUniform1i(applyTranslationLoc, false);
         glBindVertexArray(VAOcityStatus);
         colorLoc = glGetUniformLocation(baseShader, "color");
         if (cityHits == 0) { // ako nije pogodjen - zeleno
@@ -740,10 +733,8 @@ int main(void)
             // Izraèunamo razdaljinu od koptera do centra - Pitagora
             float distance = sqrt(dirX * dirX + dirY * dirY);
 
-            // Normalizujemo vektor
             dirX /= distance;
             dirY /= distance;
-
 
             // Prilagodimo brzinu pulsiranja na osnovu udaljenosti od centra - osnovna brzina je 5.0f
             float pulseSpeed = 5.0f + 10.0f * (1.0f - distance);
@@ -766,6 +757,8 @@ int main(void)
             colorLoc = glGetUniformLocation(dronShader, "color");
             glUniform3f(colorLoc, redIntensity, greenIntensity, blueIntensity);
             glDrawArrays(GL_TRIANGLE_FAN, 0, sizeof(blueCircle) / (2 * sizeof(float)));
+
+            RenderText(textShader,helicopterStrings[i], helicopterPositions[i].x* wWidth / 2 + wWidth / 2 - 5, helicopterPositions[i].y* wHeight / 2 + wHeight / 2 - 5, 0.3, glm::vec3(0.0f, 0.0f, 0.0f));
 
             if (checkCollision(helicopterPositions[i].x, helicopterPositions[i].y, helicopterRadius, cityCenterX, cityCenterY, cityCenterRadius)) {
                 helicopterPositions[i].x = 1000.0f; // Skloni helikopter sa scene

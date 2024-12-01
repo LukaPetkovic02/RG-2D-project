@@ -1,25 +1,26 @@
 ﻿  main.cpp
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(69,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(73,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(71,24): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(75,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(75,44): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(341,27): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(364,57): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(364,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(364,35): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(383,64): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(383,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(383,42): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(399,44): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(399,39): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(399,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(680,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(682,167): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(754,34): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(755,33): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(827,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(927,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(928,52): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(77,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(77,44): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(343,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(366,57): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(366,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(366,35): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(385,64): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(385,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(385,42): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(401,44): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(401,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(401,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(682,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(684,167): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(756,34): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(757,33): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(772,169): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(831,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(931,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(932,52): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 freetype28d.lib(ftinit.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(ftinit.obj)' or at ''; linking object as if no debug info
 freetype28d.lib(ftbase.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(ftbase.obj)' or at ''; linking object as if no debug info
 freetype28d.lib(autofit.obj) : warning LNK4099: PDB '' was not found with 'freetype28d.lib(autofit.obj)' or at ''; linking object as if no debug info
