@@ -259,7 +259,6 @@ int main(void)
     glfwMakeContextCurrent(window);
 
     // OpenGL state
-    glEnable(GL_CULL_FACE);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
@@ -509,8 +508,6 @@ int main(void)
             selectHelicopter(4);
         }
 
-        glClearColor(0.5, 0.5, 0.5, 1.0);
-        glClear(GL_COLOR_BUFFER_BIT);
 
         glUseProgram(unifiedShader);
         glBindVertexArray(VAO[0]);
