@@ -48,7 +48,7 @@ struct Rocket {
 };
 
 
-float rocketSpeed = 0.0002f;
+float rocketSpeed = 0.004f;
 Rocket rockets[10];
 
 bool isSpacePressed = false;
@@ -337,9 +337,11 @@ int main(void)
     glBindVertexArray(0);
 
 
+    const double frameDuration = 1000.0 / 60.0;
 
     while (!glfwWindowShouldClose(window))
     {
+        auto frameStart = std::chrono::high_resolution_clock::now();
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         {
             glfwSetWindowShouldClose(window, GL_TRUE);
@@ -658,6 +660,14 @@ int main(void)
 
         glfwSwapBuffers(window);
         glfwPollEvents();
+
+        auto frameEnd = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double, std::milli> elapsed = frameEnd - frameStart;
+
+        // Pauza ako je potrebno
+        if (elapsed.count() < frameDuration) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(frameDuration - elapsed.count())));
+        }
     }
 
     glDeleteTextures(1, &mapTexture);
