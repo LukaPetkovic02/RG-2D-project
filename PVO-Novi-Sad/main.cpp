@@ -3,7 +3,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 #define CRES 30
-#define DRONES_LEFT 10
+#define ROCKETS_LEFT 10
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 #include "Shaders.h"
@@ -32,7 +32,6 @@ static unsigned loadImageToTexture(const char* filePath);
 void generateHelicopterPositions(int number);
 void moveHelicoptersTowardsCityCenter(float cityCenterX, float cityCenterY, float speed);
 bool checkCollision(float object1X, float object1Y, float object1Radius, float object2X, float object2Y, float object2Radius);
-bool isDronOutsideScreen(float droneX, float droneY);
 void mouseCallback(GLFWwindow* window, int button, int action, int mods);
 
 
@@ -49,7 +48,7 @@ struct Rocket {
 };
 
 
-float droneSpeed = 0.0002f;
+float rocketSpeed = 0.0002f;
 Rocket rockets[10];
 
 bool isSpacePressed = false;
@@ -70,7 +69,7 @@ bool cityCenterSet = false;
 float cityCenterX = 0.0f, cityCenterY = 0.0f;
 float cityCenterRadius = 0.017;
 
-float helicopterRadius = 0.03, droneRadius = 0.03;
+float helicopterRadius = 0.03, rocketRadius = 0.03;
 int cityHits = 0;
 
 int selectedHel = -1;
@@ -144,7 +143,7 @@ int main(void)
     unsigned int unifiedShader = createShader("texture.vert", "texture.frag");
     unsigned int baseShader = createShader("base.vert", "base.frag");
     unsigned int cityShader = createShader("city.vert", "city.frag");
-    unsigned int dronShader = createShader("dron.vert", "dron.frag");
+    unsigned int rocketShader = createShader("rocket.vert", "rocket.frag");
     unsigned int textShader = createShader("text.vert", "text.frag");
     unsigned int greenShader = createShader("green.vert", "green.frag");
     int colorLoc = glGetUniformLocation(unifiedShader, "color");
@@ -200,11 +199,11 @@ int main(void)
     float cityCenterCircle[CRES * 2 + 4];
 
 
-    // Opis drona ----------------------------------------------------------------------
+    // Opis rakete ----------------------------------------------------------------------
     float blueCircle[CRES * 2 + 4];
     setCircle(blueCircle, 0.03, 0.0, 0.0);
 
-    // VAO i VBO drona
+    // VAO i VBO rakete
     unsigned int VAOBlue, VBOBlue;
     glGenVertexArrays(1, &VAOBlue);
     glGenBuffers(1, &VBOBlue);
@@ -216,21 +215,21 @@ int main(void)
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
-    int dronesLeft = DRONES_LEFT;
+    int rocketsLeft = ROCKETS_LEFT;
 
-    // VAO i VBO preostalih dronova -----------------------------------------------------
-    unsigned int VAOdronLeft[DRONES_LEFT];
-    unsigned int VBOdronLeft[DRONES_LEFT];
-    float dronLeftCircle[CRES * 2 + 4];
-    for (int i = 0; i < dronesLeft; ++i) {
+    // VAO i VBO preostalih raketa -----------------------------------------------------
+    unsigned int VAOrocketLeft[ROCKETS_LEFT];
+    unsigned int VBOrocketLeft[ROCKETS_LEFT];
+    float rocketLeftCircle[CRES * 2 + 4];
+    for (int i = 0; i < rocketsLeft; ++i) {
 
-        setCircle(dronLeftCircle, 0.02, 0.6 + 0.04 * i, -0.8);
+        setCircle(rocketLeftCircle, 0.02, 0.6 + 0.04 * i, -0.8);
 
-        glGenVertexArrays(1, &VAOdronLeft[i]);
-        glGenBuffers(1, &VBOdronLeft[i]);
-        glBindVertexArray(VAOdronLeft[i]);
-        glBindBuffer(GL_ARRAY_BUFFER, VBOdronLeft[i]);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(dronLeftCircle), dronLeftCircle, GL_STATIC_DRAW);
+        glGenVertexArrays(1, &VAOrocketLeft[i]);
+        glGenBuffers(1, &VBOrocketLeft[i]);
+        glBindVertexArray(VAOrocketLeft[i]);
+        glBindBuffer(GL_ARRAY_BUFFER, VBOrocketLeft[i]);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(rocketLeftCircle), rocketLeftCircle, GL_STATIC_DRAW);
         glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
         glEnableVertexAttribArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -404,13 +403,13 @@ int main(void)
         glUseProgram(baseShader);
 
 
-        // Crtanje preostalih dronova
-        for (int i = 0; i < dronesLeft; ++i) {
+        // Crtanje preostalih raketa
+        for (int i = 0; i < rocketsLeft; ++i) {
             glUniform1i(applyTranslationLoc, false);
-            glBindVertexArray(VAOdronLeft[i]);
+            glBindVertexArray(VAOrocketLeft[i]);
             colorLoc = glGetUniformLocation(baseShader, "color");
             glUniform3f(colorLoc, 0.0, 0.0, 1.0);
-            glDrawArrays(GL_TRIANGLE_FAN, 0, sizeof(dronLeftCircle) / (2 * sizeof(float)));
+            glDrawArrays(GL_TRIANGLE_FAN, 0, sizeof(rocketLeftCircle) / (2 * sizeof(float)));
         }
 
         // Crtanje indikatora preostalih helikoptera (crveno)
@@ -492,22 +491,22 @@ int main(void)
 
 
         if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS && !isSpacePressed) {
-            if (selectedHel != -1 && dronesLeft > 0 && !rockets[dronesLeft - 1].isFlying) {
-                dronesLeft--;
+            if (selectedHel != -1 && rocketsLeft > 0 && !rockets[rocketsLeft - 1].isFlying) {
+                rocketsLeft--;
 
-                rockets[dronesLeft].x = baseCenterX;
-                rockets[dronesLeft].y = baseCenterY;
-                rockets[dronesLeft].isFlying = true;
-                rockets[dronesLeft].targetHelicopter = selectedHel;
+                rockets[rocketsLeft].x = baseCenterX;
+                rockets[rocketsLeft].y = baseCenterY;
+                rockets[rocketsLeft].isFlying = true;
+                rockets[rocketsLeft].targetHelicopter = selectedHel;
 
 
 
                 // Postavi početni smer ka helikopteru
                 float targetX = helicopterPositions[selectedHel].x;
                 float targetY = helicopterPositions[selectedHel].y;
-                rockets[dronesLeft].dirX = targetX - baseCenterX;
-                rockets[dronesLeft].dirY = targetY - baseCenterY;
-                normalizeVector(rockets[dronesLeft].dirX, rockets[dronesLeft].dirY);
+                rockets[rocketsLeft].dirX = targetX - baseCenterX;
+                rockets[rocketsLeft].dirY = targetY - baseCenterY;
+                normalizeVector(rockets[rocketsLeft].dirX, rockets[rocketsLeft].dirY);
 
             }
             isSpacePressed = true;
@@ -534,15 +533,15 @@ int main(void)
                 normalizeVector(rockets[i].dirX, rockets[i].dirY);
 
                 // Ažuriraj poziciju rakete
-                rockets[i].x += rockets[i].dirX * droneSpeed;
-                rockets[i].y += rockets[i].dirY * droneSpeed;
+                rockets[i].x += rockets[i].dirX * rocketSpeed;
+                rockets[i].y += rockets[i].dirY * rocketSpeed;
 
                 float distance = std::sqrt(std::pow(rockets[i].x - currentHelX, 2) + std::pow(rockets[i].y - currentHelY, 2));
                
                 renderText(textShader, std::to_string((int)(distance*1000))+"m", rockets[i].x* wWidth / 2 + wWidth / 2, rockets[i].y* wHeight / 2 + wHeight / 2 - 30, 0.3, glm::vec3(0.0f, 0.0f, 0.0f));
 
                 // Provera sudara
-                if (checkCollision(rockets[i].x, rockets[i].y, droneRadius,
+                if (checkCollision(rockets[i].x, rockets[i].y, rocketRadius,
                     currentHelX, currentHelY, helicopterRadius)) {
 
                     std::random_device rd; // Nasumično seme
@@ -581,11 +580,11 @@ int main(void)
                     }
                 }
                 // Prikaz rakete
-                glUseProgram(dronShader);
+                glUseProgram(rocketShader);
                 glBindVertexArray(VAOBlue);
-                GLint translationLoc = glGetUniformLocation(dronShader, "uTranslation");
+                GLint translationLoc = glGetUniformLocation(rocketShader, "uTranslation");
                 glUniform2f(translationLoc, rockets[i].x, rockets[i].y);
-                colorLoc = glGetUniformLocation(dronShader, "color");
+                colorLoc = glGetUniformLocation(rocketShader, "color");
                 glUniform3f(colorLoc, 0.0, 1.0, 0.0);
                 glDrawArrays(GL_TRIANGLE_FAN, 0, sizeof(blueCircle) / (2 * sizeof(float)));
             }
@@ -617,11 +616,11 @@ int main(void)
                 blueIntensity = 1.0f;
                 greenIntensity = 0.0f;
             }
-            glUseProgram(dronShader);
+            glUseProgram(rocketShader);
             glBindVertexArray(VAOBlue);
-            GLint translationLoc = glGetUniformLocation(dronShader, "uTranslation");
+            GLint translationLoc = glGetUniformLocation(rocketShader, "uTranslation");
             glUniform2f(translationLoc, helicopterPositions[i].x, helicopterPositions[i].y);
-            colorLoc = glGetUniformLocation(dronShader, "color");
+            colorLoc = glGetUniformLocation(rocketShader, "color");
             glUniform3f(colorLoc, redIntensity, greenIntensity, blueIntensity);
             glDrawArrays(GL_TRIANGLE_FAN, 0, sizeof(blueCircle) / (2 * sizeof(float)));
 
@@ -654,7 +653,7 @@ int main(void)
                 std::this_thread::sleep_for(std::chrono::seconds(3));
                 initWait = true;
             }
-            moveHelicoptersTowardsCityCenter(cityCenterX, cityCenterY, droneSpeed / 2);
+            moveHelicoptersTowardsCityCenter(cityCenterX, cityCenterY, rocketSpeed / 2);
         }
 
         glfwSwapBuffers(window);
@@ -669,9 +668,9 @@ int main(void)
     glDeleteProgram(unifiedShader);
     glDeleteProgram(baseShader);
 
-    for (int i = 0; i < DRONES_LEFT; i++) {
-        glDeleteVertexArrays(1, &VAOdronLeft[i]);
-        glDeleteBuffers(1, &VBOdronLeft[i]);
+    for (int i = 0; i < ROCKETS_LEFT; i++) {
+        glDeleteVertexArrays(1, &VAOrocketLeft[i]);
+        glDeleteBuffers(1, &VBOrocketLeft[i]);
     }
 
     for (int i = 0; i < 5; i++) {
@@ -767,11 +766,6 @@ void generateHelicopterPositions(int number) {
             helicopterPositions[i].y = -1;
         }
     }
-}
-
-bool isDronOutsideScreen(float droneX, float droneY)
-{
-    return (droneX < -1.0f || droneX > 1.0f || droneY < -1.0f || droneY > 1.0f);
 }
 
 

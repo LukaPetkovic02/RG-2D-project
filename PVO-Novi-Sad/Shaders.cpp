@@ -47,12 +47,13 @@ unsigned int createShader(const char* vsSource, const char* fsSource) {
     glAttachShader(program, fragmentShader);
 
     glLinkProgram(program);
+    glValidateProgram(program);
 
     int success;
     char infoLog[512];
     glGetProgramiv(program, GL_LINK_STATUS, &success);
     if (!success) {
-        glGetProgramInfoLog(program, 512, NULL, infoLog);
+        glGetShaderInfoLog(program, 512, NULL, infoLog);
         std::cerr << "Objedinjeni sejder ima gresku: " << infoLog << std::endl;
     }
 

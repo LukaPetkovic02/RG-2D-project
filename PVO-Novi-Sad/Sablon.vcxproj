@@ -152,8 +152,8 @@
     <None Include="base.vert" />
     <None Include="city.frag" />
     <None Include="city.vert" />
-    <None Include="dron.frag" />
-    <None Include="dron.vert" />
+    <None Include="rocket.frag" />
+    <None Include="rocket.vert" />
     <None Include="green.frag" />
     <None Include="green.vert" />
     <None Include="packages.config" />

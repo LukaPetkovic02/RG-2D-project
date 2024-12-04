@@ -1,26 +1,26 @@
-﻿  TextRendering.cpp
+﻿  Shaders.cpp
   main.cpp
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(67,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(71,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(73,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(73,44): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(205,27): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(227,57): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(227,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(227,35): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(246,64): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(246,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(246,42): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(262,44): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(262,39): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(262,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(540,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(542,167): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(612,34): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(613,33): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(628,169): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(687,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(787,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(788,52): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(66,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(70,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(72,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(72,45): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(204,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(226,59): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(226,47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(226,37): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(245,64): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(245,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(245,42): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(261,44): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(261,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(261,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(539,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(541,167): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(611,34): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(612,33): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(627,169): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(686,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(781,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\main.cpp(782,52): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Generating Code...
   Sablon.vcxproj -> C:\Users\lukap\Desktop\RG-2D-project\PVO-Novi-Sad\x64\Debug\PVO.exe

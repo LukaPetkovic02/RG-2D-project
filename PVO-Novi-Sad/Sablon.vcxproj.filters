@@ -36,10 +36,10 @@
     <None Include="base.vert">
       <Filter>Source Files\Shader Files</Filter>
     </None>
-    <None Include="dron.frag">
+    <None Include="rocket.frag">
       <Filter>Source Files\Shader Files</Filter>
     </None>
-    <None Include="dron.vert">
+    <None Include="rocket.vert">
       <Filter>Source Files\Shader Files</Filter>
     </None>
     <None Include="texture.frag">
